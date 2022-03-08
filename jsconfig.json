@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "module": "es6",
+    "baseUrl": "./src",
+    "jsx": "preserve"
+  },
+  "include": ["src/**/*"]
+}

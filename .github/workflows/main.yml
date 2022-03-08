@@ -1,0 +1,25 @@
+name: End-to-end tests
+on: [pull_request]
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - run: |
+          echo "TOKEN: ${{ secrets.NPM_TOKEN }}"
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
+          yarn
+          yarn test:e2e:ci
+        env:
+          CI: true
+          CYPRESS_baseUrl: 'http://localhost:8000/'
+          GATSBY_HASURA_BASE_URL: 'https://gql-preview.everlywell.com/v1/graphql'
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GATSBY_ENTERPRISE_PARTNER_ID: 27
+          BRAND_ID: 'generic-default'
+          CONTENTFUL_ACCESS_TOKEN: 'eaYA64-BGq_YPSRcWO1Jqe3AwslrLOpIJmcKs5WJXaI'
+          PRODUCT_CONTENTFUL_ACCESS_TOKEN: 'fd3674673edfd8ee8ae2c9f537701c27b1121e7a4fbd06c8e5bb47eb3f7e7a22'
+          GATSBY_API_ORDER_QUOTA: 'https://enbxcuud90tw5l4.m.pipedream.net'
+          GATSBY_ACCESS_CODE_VALIDATOR_ENDPOINT: 'https://en1mrrxjwgiwhdo.m.pipedream.net'
+          GATSBY_ORDER_PLACEMENT_ENDPOINT: 'https://eno988b0pn23ae6.m.pipedream.net/'

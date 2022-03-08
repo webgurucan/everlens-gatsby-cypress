@@ -1,0 +1,47 @@
+export default {
+  customTimeout: 20000,
+  personalInfo: {
+    inputs: 6,
+    buttons: 1,
+    progressBarCount: 2,
+    progressBarNum: '1',
+  },
+  tests: {
+    buttons: 3,
+    title: 'Available Tests',
+    progressBarCount: 4,
+    progressBarNum: '2',
+  },
+  shipment: {
+    inputs: 7,
+    buttons: 1,
+    selects: 1,
+    progressBarCount: 6,
+    progressBarNum: '3',
+  },
+  review: {
+    buttons: 1,
+    inputs: 0,
+    testTitle: 'Items in the order',
+    title: 'Personal Information',
+    progressBarCount: 8,
+    progressBarNum: '4',
+  },
+  progressBar: {
+    class: '.RSPBprogressBar',
+  },
+  userInfo: {
+    firstName: 'Jane',
+    lastName: 'Doe',
+    name: 'Jane Doe',
+    id: '12345678',
+    dob: '01/01/1990',
+    email: 'jdoe@gmail.com',
+    phone: '800-123-4567',
+    street: '123 Street Dr',
+    city: 'City',
+    zipcode: '11111',
+    state: 'TX',
+    password: 'password',
+  },
+};
